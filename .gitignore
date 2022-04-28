@@ -1,2 +1,7 @@
 models
 paras
+
+.vscode/
+__pycache__/
+db.sqlite3
+venv/

@@ -16,6 +16,7 @@ from pathlib import Path
 
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 BASE_DIR = Path(__file__).resolve().parent.parent
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 print("settings_DIR", SETTINGS_PATH)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/

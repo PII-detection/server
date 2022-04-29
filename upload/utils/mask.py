@@ -79,13 +79,11 @@ class Redactor:
     def redact_txt(self, word_list, sensitive_data):
        
         for i in range(len(word_list)):
-            for j in range(len(word_list[i])):
-                if word_list[i][j] in sensitive_data:
-                    word_list[i][j] = '*****'
+            if word_list[i] in sensitive_data:
+                word_list[i] = '*****'
+        print(word_list)
+        file = open('./files/redacted.txt', 'w')
         
-        file = open('/files/redacted.txt', 'w')
-        for sentence in word_list:
-            file.writelines(sentence)
-            file.write('\n')
+        file.write(' '.join(word_list))
         file.close()
   

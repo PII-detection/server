@@ -23,38 +23,41 @@ class word_extract():
             self.content.extend(pageinfo.extractText().split())
         return self.content
     
-            
+    def preprocess(self, content):
+        def extractDigits(lst):
+            return [[el.strip('""')] for el in lst]
+        a_list = nltk.tokenize.sent_tokenize(content)    
+        tmp = []
+        list_list=extractDigits(a_list)
+        
+        for i in list_list:
+            a = nltk.word_tokenize(i[0])
+            tmp.append(a)
+
+        for i in tmp:
+            for n in i:
+                if "@" in n:
+                    sentencenum = tmp.index(i)
+                    x = i.index(n)
+                    tmp[sentencenum][x-1 : x+2] = [''.join(tmp[sentencenum][x-1 : x+2])]
+        return tmp
+    
     def pdf_to_dict(self, file_bytes):
         text = ""
         with fitz.Document(stream=file_bytes, filetype='pdf') as doc:
             
             for page in doc:
                 text += page.get_text()
-
-        default_st = nltk.sent_tokenize
-        alice_sentences = default_st(text=text)   
-        res = []
-        
-        whitespace_wt = nltk.WhitespaceTokenizer()
-        for sentence in alice_sentences:
-            words = whitespace_wt.tokenize(sentence)
-            res.append(words)
         # print(res)
-        return res, text
+        list_list = self.preprocess(text)
+        return list_list
     
     def extract_from_txt(self, file_bytes):
         text = file_bytes.rstrip()
         # print(text)
-        default_st = nltk.sent_tokenize
-        alice_sentences = default_st(text=text)   
-        res = []
-        
-        whitespace_wt = nltk.WhitespaceTokenizer()
-        for sentence in alice_sentences:
-            words = whitespace_wt.tokenize(sentence)
-            res.append(words)
+        list_list = self.preprocess(text)
         # print(res)
-        return res, text
+        return list_list
         
 
         

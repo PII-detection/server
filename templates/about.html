@@ -4,20 +4,47 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="referrer" content="no-referrer" />
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         {% include "header.html" %}
-    <title>Detail Page</title>
+    <title>About Page</title>
   </head>
 <body>
-    <div class="container">
-        <div class="row d-flex justify-content-center mt-100">
-            <div class="col-md-8">
-                <h1 align="center"> We are MEng students from UC Berkeley </h1>
-            </div> 
+  <div class="container">
+    <div class="card-group">
+      <div class="card">
+        <img class="card-img-top" src="https://ca-times.brightspotcdn.com/dims4/default/3f2043d/2147483647/strip/true/crop/3000x1944+0+0/resize/840x544!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Ff2%2F10%2Fc8c60a3c4c9daa11f4b1f2c2a0f5%2Fla-photos-freelance-contract-463919-me-adulting-class-uc-berkeley16-je.jpg" alt="berkeley">
+        <div class="card-body">
+          <h5 class="card-title">Our Team</h5>
+          <p class="card-text">
+            Our team with four students from IEOR department and one student from CEE department have partnered with a cybersecurity company called Crowdstrike to protect sensitive personal data privacy. We are dedicated to building a product that an enterprise can use to parse, detect, locate and encrypt PII in a variety of documents. </p>
+         
         </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="https://scwcontent.affino.com/AcuCustom/Sitename/DAM/012/news-feb2018-data-privacykeyred_Cropped.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Introduction</h5>
+          <p class="card-text">Our cloud server detects, parses, and cleans data from different types of documents; embeds a Natural Language Processing (NLP) algorithm to classify and tokenize confidential data; integrates models in the backend and masks PII in a user-friendly frontend.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+       
+        <img class="card-img-top" src=" https://bbcincorp.com/wp-content/uploads/2020/10/legal-base-of-employment-contracts-in-vietnam-1.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Performance</h5>
+          <p class="card-text">Our service, using Conditional Random Field (CRF) and Bi-directional Long Short Term Memory (Bi-LSTM), can successfully detect sensitive information such as name, location, gender and organization. And it has 94% accuracy on the training set and 91% on the test set. We identify the future work as the extension to other PII (such as Personal Health Information) and an improved accuracy of the model. We believe our service has the potential to answer the crucial cybersecurity need to detect PII and anonymize business-related documents.</p>
+         
+        </div>
+      </div>
     </div>
+  </div>
+
+
+
+    
 </body>
   <footer>
     {% include "footer.html" %}

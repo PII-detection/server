@@ -51,8 +51,8 @@ class getFilteredWords:
     
     ## input : word list
     def filter(self, sentences, text_string):
-        para_dir = '/Users/niwanchun/Documents/backend/crowdstrike_PII_detection/upload/utils/paras/mapping.pkl'
-        model_dir = '/Users/niwanchun/Documents/backend/crowdstrike_PII_detection/upload/utils/models/test' 
+        para_dir = '/Users/niwanchun/Documents/crowdstrike_PII_detection/upload/utils/paras/mapping.pkl'
+        model_dir = '/Users/niwanchun/Documents/crowdstrike_PII_detection/upload/utils/models/test' 
         paras = self.para_loader(para_dir)
         # print(paras.keys())
         model = self.model_loader(model_dir)

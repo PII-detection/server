@@ -25,9 +25,9 @@ class word_extract():
     
             
     def pdf_to_dict(self, file_bytes):
-
+        text = ""
         with fitz.Document(stream=file_bytes, filetype='pdf') as doc:
-            text = ""
+            
             for page in doc:
                 text += page.get_text()
 
@@ -40,7 +40,7 @@ class word_extract():
             words = whitespace_wt.tokenize(sentence)
             res.append(words)
         # print(res)
-        return res
+        return res, text
     
     def extract_from_txt(self, file_bytes):
         text = file_bytes.rstrip()

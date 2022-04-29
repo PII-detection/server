@@ -12,16 +12,23 @@
   </head>
 
 <body>
-    <div class="container">
-        <div class="row d-flex justify-content-center mt-100">
-            <div class="col-md-8">
-                <h1>
-                    The privacy score of your file is {{ score }}
-                    <div class="col-md-4"><a href="{% url 'upload:download' %}">Click To Download</a></div>
-                </h1>
-            </div>
+
+  <div class="container">
+    <div class="card text-center">
+        <div class="card-header">
+          
         </div>
+        <div class="card-body">
+          <h5 class="card-title">Detection Result</h5>
+          <p class="card-text">The percentage of the PII in your documents is {{ score }}</p>
+          <a href="{% url 'upload:download' %}" class="btn btn-primary">Click to download</a>
+        </div>
+        <div class="card-footer text-muted">
+          
+        </div>
+      </div>
     </div>
+
 </body>
 <footer>
     {% include "footer.html" %}

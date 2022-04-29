@@ -27,7 +27,7 @@ def uploadFile(request):
         # content = extractor.extract_from_pdf(uploadedFile)
         content = []
         if extension == 'pdf':
-            content = extractor.pdf_to_dict(fileBytes)
+            content, content_txt = extractor.pdf_to_dict(fileBytes)
         elif extension == 'txt':
             content, content_txt = extractor.extract_from_txt(fileBytes.decode('utf-8'))
         ##[[word, word], [word, word]]
@@ -53,14 +53,18 @@ def detail(request):
     
 def download(request):
     filename = ""
-    if os.path.exists('../files/redacted.pdf'):
-        file = open('../files/redacted.pdf', 'rb')
-        filename = '../files/redacted.pdf'
-    elif os.path.exists('../files/redacted.txt'):
-        file = open('../files/redacted.txt', 'rb')
-        filename = '../files/redacted.txt'
-    response = HttpResponse(file)
+    if os.path.exists('./files/redacted.pdf'):
+        file = open('./files/redacted.pdf', 'rb')
+        filename = './files/redacted.pdf'
+        response = HttpResponse(file)
+        response['Content-Disposition'] = 'attachment;filename="redacted.pdf"'
+    elif os.path.exists('./files/redacted.txt'):
+        file = open('./files/redacted.txt', 'rb')
+        filename = './files/redacted.txt'
+        response = HttpResponse(file)
+        response['Content-Disposition'] = 'attachment;filename="redacted.txt"'
+   
     response['Content-Type'] = 'application/octet-stream' #设置头信息，告诉浏览器这是个文件
-    response['Content-Disposition'] = 'attachment;filename="redacted.txt"'
+    
     os.remove(filename)
     return response

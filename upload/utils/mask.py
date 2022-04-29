@@ -74,7 +74,7 @@ class Redactor:
             page.apply_redactions()
              
         # # saving it to a new pdf
-        doc.save('../files/redacted.pdf')
+        doc.save('./files/redacted.pdf')
     
     def redact_txt(self, word_list, sensitive_data):
        
@@ -83,7 +83,7 @@ class Redactor:
                 if word_list[i][j] in sensitive_data:
                     word_list[i][j] = '*****'
         
-        file = open('../files/redacted.txt', 'w')
+        file = open('/files/redacted.txt', 'w')
         for sentence in word_list:
             file.writelines(sentence)
             file.write('\n')

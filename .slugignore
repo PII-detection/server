@@ -7,3 +7,4 @@ paras
 __pycache__/
 db.sqlite3
 django_env
+env

@@ -14,6 +14,8 @@ etelemetry
 filelock
 fitz
 # pyMupdf
+python3-tk
+tk-dev
 future
 gunicorn
 httplib2

@@ -14,7 +14,7 @@ etelemetry
 filelock
 fitz
 # pyMupdf
-tkinter
+Tkinter
 tk-dev
 future
 gunicorn

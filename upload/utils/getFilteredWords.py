@@ -8,8 +8,7 @@ import pickle
 import torch
 import numpy as np
 import re
-from pydrive.auth import GoogleAuth
-from pydrive.drive import GoogleDrive
+
 
 
 
@@ -57,14 +56,6 @@ class getFilteredWords:
     
     ## input : word list
     def filter(self, sentences, text_string):
-        gauth = GoogleAuth()           
-        drive = GoogleDrive(gauth) 
-        file_list = drive.ListFile({'q': "'{}' in parents and trashed=false".format('1cIMiqUDUNldxO6Nl-KVuS9SV-cWi9WLi')}).GetList()
-        for file in file_list:
-            print('title: %s, id: %s' % (file['title'], file['id']))
-        for i, file in enumerate(sorted(file_list, key = lambda x: x['title']), start=1):
-        print('Downloading {} file from GDrive ({}/{})'.format(file['title'], i, len(file_list)))
-        file.GetContentFile(file['title'])
         
         para_dir = '/Users/niwanchun/Documents/crowdstrike_PII_detection/upload/utils/paras/mapping.pkl'
         model_dir = '/Users/niwanchun/Documents/crowdstrike_PII_detection/upload/utils/models/test' 

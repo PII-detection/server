@@ -13,7 +13,7 @@ dj-database-url
 etelemetry
 filelock
 fitz
-pyMupdf
+# pyMupdf
 future
 gunicorn
 httplib2

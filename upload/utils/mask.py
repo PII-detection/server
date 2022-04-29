@@ -3,6 +3,7 @@ import fitz
 import re
 import nltk
 nltk.download('punkt')
+import string
 class Redactor:
    
     # static methods work independent of class object
@@ -79,7 +80,8 @@ class Redactor:
     def redact_txt(self, word_list, sensitive_data):
        
         for i in range(len(word_list)):
-            if word_list[i] in sensitive_data:
+            tmp = word_list[i].strip(string.punctuation)
+            if tmp in sensitive_data:
                 word_list[i] = '*****'
         print(word_list)
         file = open('./files/redacted.txt', 'w')

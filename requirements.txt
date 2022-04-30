@@ -12,7 +12,6 @@ dataclasses==0.8
 decorator==4.4.2
 dj-database-url==0.5.0
 Django==3.2.13
-django-heroku==0.3.1
 etelemetry==0.2.2
 filelock==3.4.1
 fitz==0.0.1.dev2

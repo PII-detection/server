@@ -1,3 +1,5 @@
+-f https://download.pytorch.org/whl/torch_stable.html
+torch==1.10.1+cpu
 asgiref==3.4.1
 certifi==2021.10.8
 chardet==4.0.0
@@ -47,7 +49,6 @@ simplejson==3.17.6
 singledispatch==3.7.0
 six==1.16.0
 sqlparse==0.4.2
-torch==1.10.2
 tqdm==4.64.0
 traits==6.3.2
 typing_extensions==4.1.1

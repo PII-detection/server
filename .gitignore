@@ -6,6 +6,7 @@ __pycache__/
 db.sqlite3
 env
 py39env
+py36env
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
